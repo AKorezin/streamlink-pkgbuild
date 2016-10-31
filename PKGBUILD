@@ -10,12 +10,12 @@ depends=('python-requests' 'rtmpdump' 'python-setuptools')
 makedepends=('python-sphinx')
 optdepends=('python-librtmp: Required by the ustreamtv plugin to be able to use non-mobile streams.')
 conflicts=('streamlink')
-source=(git+https://github.com/chrippa/streamlink)
-sha256sums=('SKIP')
+source=(git+https://github.com/streamlink/streamlink
+        goodgame.py)
+sha256sums=('SKIP'
+            'SKIP')
 prepare() {
-#	cd "${srcdir}/${_pkgname}"
-#	git fetch origin pull/1461/head:1461
-#	git merge 1461
+  cp goodgame.py "${srcdir}/${_pkgname}/src/streamlink/plugins/"
 }
 pkgver() {
   cd "${srcdir}/${_pkgname}"
