@@ -13,7 +13,7 @@ conflicts=('streamlink')
 source=(git+https://github.com/streamlink/streamlink
         goodgame.py)
 sha256sums=('SKIP'
-            'SKIP')
+            '272f4ebc6c11ceade081f8bdd2062a79b888d0e967264272c2d4c36f77fa1916')
 prepare() {
   cp goodgame.py "${srcdir}/${_pkgname}/src/streamlink/plugins/"
 }
