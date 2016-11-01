@@ -1,6 +1,6 @@
 pkgname=streamlink-git
 _pkgname=streamlink
-pkgver=r1590.5f9045a
+pkgver=0.0.2.r11.g5f9045a
 pkgrel=1
 pkgdesc='CLI program that launches streams from various streaming services in a custom video player'
 arch=('any')
@@ -19,7 +19,7 @@ prepare() {
 }
 pkgver() {
   cd "${srcdir}/${_pkgname}"
-  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 build() {
   cd "${srcdir}/${_pkgname}"
